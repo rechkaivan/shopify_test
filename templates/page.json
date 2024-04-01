@@ -2,13 +2,137 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "content_basic_PcgCce": {
+      "type": "content-basic",
+      "blocks": {
+        "heading_3rdKaa": {
+          "type": "heading",
+          "settings": {
+            "article_head_title": "<p>h1 basic content page<\/p>",
+            "article_head_subtitle": "<p>This is a subtitle which typically goes under a headline<\/p>",
+            "article_head_text": "Sed posuere consectetur est at lobortis. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur. Maecenas sed diam eget risus varius blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Sed posuere consectetur est at lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna.Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
+          }
+        },
+        "body_cdRdTj": {
+          "type": "body",
+          "settings": {
+            "article_body_title": "<p>this is h2 headline<\/p>",
+            "article__body__head_img": "shopify:\/\/shop_images\/Rectangle_2179.png",
+            "article_body_text": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas faucibus mollis interdum. Sed posuere consectetur est at lobortis.",
+            "article__body_img_1": "shopify:\/\/shop_images\/Rectangle_2180.png",
+            "article__body_img_2": "shopify:\/\/shop_images\/Rectangle_2181.png"
+          }
+        }
+      },
+      "block_order": [
+        "heading_3rdKaa",
+        "body_cdRdTj"
+      ],
+      "settings": {
+        "sidebar_title": "<p>sidebar<\/p>",
+        "content_menu": "content-menu"
+      }
+    },
+    "news_letter_VppGdi": {
+      "type": "news-letter",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/brand.jpg",
+        "head_text": "join our Newsletter",
+        "body_text": "Be the first to know about our offers, events &  new arrivals",
+        "btn_text": "Sign Up",
+        "btn_color": "#004289"
+      }
+    },
+    "custom_multi_column_gnVfqe": {
+      "type": "custom-multi-column",
+      "blocks": {
+        "column_ewjnNM": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Outdoor.png",
+            "title": "WE love outdoors",
+            "text": "<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_ebfbMz": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/planet-earth.png",
+            "title": "Sustainable",
+            "text": "<p> Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_8Difxg": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/saint-patricks-day.png",
+            "title": "based in IRELAND",
+            "text": "<p> Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_qxNk3q": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/knitting.png",
+            "title": "something",
+            "text": "<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit<\/p>",
+            "link_label": "",
+            "link": "shopify:\/\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "column_ewjnNM",
+        "column_ebfbMz",
+        "column_8Difxg",
+        "column_qxNk3q"
+      ],
+      "settings": {
+        "subtitle": "Quisque velit nisi-",
+        "title": "\"Pellentesque in ipsum id orci porta dapibus.\"",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "learn more",
+        "button_link": "shopify:\/\/collections\/all",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "icon_with_text_bar_KiXbmg": {
+      "type": "icon-with-text-bar",
+      "settings": {
+        "bg_color": "#004289",
+        "full__page_width": true,
+        "text_1": "28 day returns",
+        "text_2": "free delivery on orders over €40",
+        "text_3": "Irish Family Business Since 1984"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "content_basic_PcgCce",
+    "news_letter_VppGdi",
+    "custom_multi_column_gnVfqe",
+    "icon_with_text_bar_KiXbmg"
   ]
 }

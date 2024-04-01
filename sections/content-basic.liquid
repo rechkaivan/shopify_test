@@ -21,24 +21,47 @@
   </article>
 {% endcomment %}
 {% style %}
-  .article--head-title {
+  .article--head-title > p {
+    margin: 0;
     text-transform: uppercase;
     font-size: 66px;
     color: #004289;
     font-weight: bold;
   }
 
-  .article--head-subtitle {
+  .article--head-title {
+    margin-bottom: 0;
+  }
+
+  .article--head-subtitle > p {
+    margin: 0;
     color: #004289;
     font-size: 20px;
     font-weight: bold;
+    margin-bottom: 2.6rem;
   }
 
   .article--body-title {
     text-transform: uppercase;
     color: #004289;
-    font-size: 36px;
+    font-size: 40px;
     font-weight: bold;
+  }
+
+  .article-width {
+    width: 93%;
+  }
+
+  .article--head-text {
+    line-height: 2.7rem;
+  }
+
+  .article--body-head-img {
+    width: 100%;
+  }
+
+  .article--head-subtitle > p {
+    text-transform: capitalize;
   }
 
   .subimage-wraper {
@@ -55,12 +78,12 @@
   }
 
   aside {
-    flex: 40%;
+    flex: 47%;
     background-color: #f5f6f4;
   }
 
   article {
-    flex: 60%;
+    width: 100%;
   }
 
   .aside-title {
@@ -73,6 +96,7 @@
   .article-menu {
     list-style: none;
     padding: 0;
+    line-height: 2.6rem;
   }
 
   .menu-item > a {
@@ -82,12 +106,12 @@
     font-weight: bold;
   }
 
-  .menu-item:hover {
+  .menu-item:hover > a {
     color: #004289;
   }
 
   .aside-container {
-    padding: 7rem 6rem;
+    padding: 2.5rem 6rem;
   }
 {% endstyle %}
 
@@ -95,13 +119,13 @@
   {%- for block in section.blocks -%}
     {%- case block.type -%}
       {%- when 'heading' -%}
-        <article>
+        <article class="article-width">
           <h1 class="article--head-title">{{ block.settings.article_head_title }}</h1>
           <h3 class="article--head-subtitle">{{ block.settings.article_head_subtitle }}</h3>
-          <p class="article--haed-text">{{ block.settings.article_head_text }}</p>
+          <p class="article--head-text">{{ block.settings.article_head_text }}</p>
         </article>
       {%- when 'body' -%}
-        <article>
+        <article class="article-width">
           <h2 class="article--body-title">{{ block.settings.article_body_title }}</h2>
           {% if block.settings.article__body__head_img != blank %}
             <img class="article--body-head-img" src="{{ block.settings.article__body__head_img | image_url }}">

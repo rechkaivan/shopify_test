@@ -3,9 +3,10 @@
     position: relative;
     flex: 50%;
   }
+
   .hero-text {
     position: absolute;
-    width: 75%;
+    width: 60%;
     text-align: center;
     top: 50%;
     left: 50%;
@@ -14,6 +15,7 @@
     font-weight: bold;
     z-index: 10;
   }
+
   .hero-image::after {
     content: '';
     position: absolute;
@@ -25,61 +27,88 @@
     width: 100%;
     height: 100%;
   }
+
   .hero-text > h1,
   .hero-text > p {
     color: white;
     z-index: 10;
   }
+
   .hero-text > h1 {
     text-transform: uppercase;
-    font-weight: 700;
-    font-size: 60px;
+    font-weight: bold;
+    font-size: 66px;
     margin: 0;
     line-height: 66px;
+    letter-spacing: 3px;
   }
+
   .jumbotron {
-    padding: 10px 10px 20px 20px;
+    padding: 5rem 4rem 0rem 4.3rem;
     flex: 50%;
   }
+
   .jumbotron-head {
+    margin: 0;
     color: white;
     font-weight: bold;
     text-transform: uppercase;
   }
+
+  .jumbotron-head > p {
+    margin: 0;
+  }
+
   .jumbotron-body {
+    margin: 0;
     color: white;
   }
+
+  .jumbotron-body > p {
+    margin-top: 1.1rem;
+    margin-bottom: 2.3rem;
+    font-size: 16px;
+    line-height: 23px;
+  }
+
   .btn-primary {
-    padding: 0px 30px;
+    padding: 0px 4rem;
     color: white;
     background-color: rgba(0, 0, 0, 0);
     border: solid 2px white;
     text-transform: uppercase;
     cursor: pointer;
   }
-  .banner {
+
+  .banner-container {
     display: flex;
     justify-content: flex-start;
     padding-right: 15px;
   }
-  .img-banner > .banner:first-child {
+
+  .img-banner > .banner-container:first-child {
     padding-bottom: 20px;
   }
+
   .banner-img-container {
     flex: 50%;
   }
+
   .banner-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
+
   .container {
     display: flex;
     padding: 0;
   }
+
   .img-banner {
     flex: 50%;
   }
+
   .background-img > img,
   .background-img > svg {
     width: 100%;
@@ -96,7 +125,7 @@
     {%- for block in section.blocks -%}
       {%- case block.type -%}
         {%- when 'banner' -%}
-          <div class="banner">
+          <div class="banner-container">
             <div class="banner-img-container">
               {%- if block.settings.banner_img != blank -%}
                 <img
@@ -144,7 +173,7 @@
     <div class="hero-text">
       <h1>{{ section.settings.head_text }}</h1>
       <p>{{ section.settings.body_text }}</p>
-      <button class="btn-primary" style="text-transform: upper-case;">{{ section.settings.btn_text }}</button>
+      <button class="btn-primary" style="text-transform: uppercase;">{{ section.settings.btn_text }}</button>
     </div>
   </div>
 </div>

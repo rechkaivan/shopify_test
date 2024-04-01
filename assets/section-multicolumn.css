@@ -1,5 +1,8 @@
 .multicolumn .title {
   margin: 0;
+  padding: 0.6rem 4rem;
+  letter-spacing: 4px;
+  line-height: 70px;
 }
 
 .multicolumn.no-heading .title {

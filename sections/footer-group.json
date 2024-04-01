@@ -2,91 +2,6 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "news_letter_QkBYYA": {
-      "type": "news-letter",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/brand.jpg",
-        "head_text": "join our Newsletter",
-        "body_text": "Be the first to know about our offers, events &  new arrivals",
-        "btn_text": "Sign Up",
-        "btn_color": "#004289"
-      }
-    },
-    "custom_multi_column_xix8JP": {
-      "type": "custom-multi-column",
-      "blocks": {
-        "column_4DAfCe": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Outdoor.png",
-            "title": "WE love outdoors",
-            "text": "<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_7AWHWG": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/planet-earth.png",
-            "title": "Sustainable",
-            "text": "<p> Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_td4wqK": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/saint-patricks-day.png",
-            "title": "based in IRELAND",
-            "text": "<p> Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_kgCxQi": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/knitting.png",
-            "title": "something",
-            "text": "<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_4DAfCe",
-        "column_7AWHWG",
-        "column_td4wqK",
-        "column_kgCxQi"
-      ],
-      "settings": {
-        "subtitle": "Quisque velit nisi-",
-        "title": "\"Pellentesque in ipsum id orci porta dapibus.\"",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 4,
-        "column_alignment": "left",
-        "background_style": "primary",
-        "button_label": "learn more",
-        "button_link": "",
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "icon_with_text_bar_DFb8Nc": {
-      "type": "icon-with-text-bar",
-      "settings": {
-        "bg_color": "#004289",
-        "full__page_width": true
-      }
-    },
     "custom_footer_RjQAen": {
       "type": "custom-footer",
       "blocks": {
@@ -155,9 +70,6 @@
     }
   },
   "order": [
-    "news_letter_QkBYYA",
-    "custom_multi_column_xix8JP",
-    "icon_with_text_bar_DFb8Nc",
     "custom_footer_RjQAen",
     "footer"
   ]
