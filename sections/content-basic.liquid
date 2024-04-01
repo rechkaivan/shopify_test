@@ -1,0 +1,228 @@
+{% comment %}
+  {% style %}
+    .article--title {
+      text-transform: uppercase;
+      font-size: 66px;
+      color: #004289;
+      font-weight: bold;
+    }
+
+    .article-subtitle {
+      color: #004289;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .article-text {
+    }
+  {% endstyle %}
+
+  <article class="page-width">
+
+  </article>
+{% endcomment %}
+{% style %}
+  .article--head-title {
+    text-transform: uppercase;
+    font-size: 66px;
+    color: #004289;
+    font-weight: bold;
+  }
+
+  .article--head-subtitle {
+    color: #004289;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .article--body-title {
+    text-transform: uppercase;
+    color: #004289;
+    font-size: 36px;
+    font-weight: bold;
+  }
+
+  .subimage-wraper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .sub-image {
+    width: 48%;
+  }
+
+  .article--body-head-image {
+    width: 100%;
+  }
+
+  aside {
+    flex: 40%;
+    background-color: #f5f6f4;
+  }
+
+  article {
+    flex: 60%;
+  }
+
+  .aside-title {
+    text-transform: uppercase;
+    color: #004289;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  .article-menu {
+    list-style: none;
+    padding: 0;
+  }
+
+  .menu-item > a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .menu-item:hover {
+    color: #004289;
+  }
+
+  .aside-container {
+    padding: 7rem 6rem;
+  }
+{% endstyle %}
+
+<article>
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when 'heading' -%}
+        <article>
+          <h1 class="article--head-title">{{ block.settings.article_head_title }}</h1>
+          <h3 class="article--head-subtitle">{{ block.settings.article_head_subtitle }}</h3>
+          <p class="article--haed-text">{{ block.settings.article_head_text }}</p>
+        </article>
+      {%- when 'body' -%}
+        <article>
+          <h2 class="article--body-title">{{ block.settings.article_body_title }}</h2>
+          {% if block.settings.article__body__head_img != blank %}
+            <img class="article--body-head-img" src="{{ block.settings.article__body__head_img | image_url }}">
+          {% endif %}
+          <p class="article--body-text">{{ block.settings.article_body_text }}</p>
+          <div class="subimage-wraper">
+            {% if block.settings.article__body_img_1 != empty %}
+              <img class="sub-image" src="{{ block.settings.article__body_img_1 | image_url }}">
+            {% endif %}
+            {% if block.settings.article__body_img_2 != empty %}
+              <img class="sub-image" src="{{ block.settings.article__body_img_2 | image_url }}">
+            {% endif %}
+          </div>
+        </article>
+    {%- endcase -%}
+  {%- endfor -%}
+</article>
+<aside>
+  <div class="aside-container">
+    <h1 class="aside-title">{{ section.settings.sidebar_title }}</h1>
+    <ul class="article-menu">
+      {%- for item in section.settings.content_menu.links -%}
+        <li class="menu-item">
+          <a href="{{ item.url }}">{{ item.title }}</a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</aside>
+
+{% schema %}
+{
+  "name": "content-basic",
+  "tag": "section",
+  "class": "content-basic page-width",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "sidebar_title",
+      "label": "Sidebar Title",
+      "default": "<p>sidebar</p>"
+    },
+    {
+      "type": "link_list",
+      "id": "content_menu",
+      "label": "Content Menu"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Contrent Heading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "article_head_title",
+          "label": "Heading Text",
+          "default": "<p>h1 basic content page</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "article_head_subtitle",
+          "label": "Subtitle Text",
+          "default": "<p>This is a subtitle which typically goes under a headline</p>"
+        },
+        {
+          "type": "text",
+          "id": "article_head_text",
+          "label": "Text",
+          "default": "Sed posuere consectetur est at lobortis. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur. Maecenas sed diam eget risus varius blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor."
+        }
+      ]
+    },
+    {
+      "type": "body",
+      "name": "Content Body",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "article_body_title",
+          "label": "Title",
+          "default": "<p>this is h2 headline</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "article__body__head_img",
+          "label": "Head Image"
+        },
+        {
+          "type": "text",
+          "id": "article_body_text",
+          "label": "Text",
+          "default": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas faucibus mollis interdum. Sed posuere consectetur est at lobortis."
+        },
+        {
+          "type": "image_picker",
+          "id": "article__body_img_1",
+          "label": "Sub Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "article__body_img_2",
+          "label": "Sub Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Content Basic",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "body"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

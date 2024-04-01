@@ -1,0 +1,132 @@
+{% style %}
+  .article-title {
+    text-transform: uppercase;
+    color: #004289;
+    font-size: 36px;
+    font-weight: bold;
+  }
+
+  .subimage-wraper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .sub-image {
+    width: 48%;
+  }
+
+  .article-title-image {
+    width: 100%;
+  }
+
+  aside {
+    flex: 30%;
+    background-color: #f5f6f4;
+  }
+
+  article {
+    flex: 70%;
+  }
+
+  .aside-title {
+    text-transform: uppercase;
+    color: #004289;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  .article-menu {
+    list-style: none;
+    padding: 0;
+  }
+
+  .menu-item > a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .menu-item:hover {
+    color: #004289;
+  }
+{% endstyle %}
+
+<article class="page-width">
+  <h2 class="article-title">{{ section.settings.article_title }}</h2>
+  {% if section.settings.article__head_img != blank %}
+    <img class="article-title-image" src="{{ section.settings.article__head_img | image_url }}">
+  {% endif %}
+  <p class="headline__article-text">{{ section.settings.article_text }}</p>
+  <div class="subimage-wraper">
+    {% if section.settings.article__body_img_1 != empty %}
+      <img class="sub-image" src="{{ section.settings.article__body_img_1 | image_url }}">
+    {% endif %}
+    {% if section.settings.article__body_img_2 != empty %}
+      <img class="sub-image" src="{{ section.settings.article__body_img_2 | image_url }}">
+    {% endif %}
+  </div>
+</article>
+<aside>
+  <h1 class="aside-title">{{ section.settings.sidebar_title }}</h1>
+  <ul class="article-menu">
+    {%- for item in section.settings.content_menu.links -%}
+      <li class="menu-item">
+        <a href="{{ item.url }}">{{ item.title }}</a>
+      </li>
+    {%- endfor -%}
+  </ul>
+</aside>
+
+{% schema %}
+{
+  "name": "content-headline",
+  "tag": "section",
+  "class": "content-basic",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "sidebar_title",
+      "label": "Sidebar Title",
+      "default": "<p>sidebar</p>"
+    },
+    {
+      "type": "link_list",
+      "id": "content_menu",
+      "label": "Content Menu"
+    },
+    {
+      "type": "richtext",
+      "id": "article_title",
+      "label": "Title",
+      "default": "<p>this is h2 headline</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "article__head_img",
+      "label": "Head Image"
+    },
+    {
+      "type": "text",
+      "id": "article_text",
+      "label": "Text",
+      "default": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas faucibus mollis interdum. Sed posuere consectetur est at lobortis."
+    },
+    {
+      "type": "image_picker",
+      "id": "article__body_img_1",
+      "label": "Sub Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "article__body_img_2",
+      "label": "Sub Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Content Headline"
+    }
+  ]
+}
+{% endschema %}
