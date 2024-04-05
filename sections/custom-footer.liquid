@@ -2,89 +2,132 @@
   .row {
     display: flex;
     justify-content: space-between;
-    padding: 0 0 50px 0;
+    padding: 4rem 0 10rem 0;
   }
+
   .col-logo {
     flex: 20%;
     text-align: right;
     padding-right: 50px;
   }
+
   .col-info {
     flex: 20%;
   }
+
   .col-contact {
     flex: 20%;
   }
+
   .col-join_us {
-    flex: 10%;
+    /* flex: 10%; */
+    width: 357px;
   }
+
   .col-head {
     font-size: 24px;
     font-weight: 700;
     color: #333;
   }
+
   .list {
     list-style: none;
     padding: 0;
   }
+
   .list-item {
     text-decoration: none;
     font-size: 16px;
     font-weight: 400;
     color: #333;
   }
+
   .group {
     display: flex;
     justify-content: space-between;
   }
+
   .group label {
     display: block;
   }
+
   .content {
-    margin-right: 40px;
+    margin-left: 40px;
   }
+
   .content > p {
     margin: 0;
     font-size: 16px;
     font-weight: 700;
     color: #004289;
   }
+
   .contact-wrapper {
     margin: 10px 0;
   }
+
+  .contact-container {
+    width: 50%;
+  }
+
   .others {
     margin: 20px 0;
   }
+
   .others > P {
     margin: 0;
   }
+
   .footer__list-social {
     margin: 0;
   }
+
   .footer__list-social > li {
     background-color: #004289;
     margin-right: 10px;
   }
+
   .footer__list-social > li > a {
     padding: 0;
   }
+
   .news-letter {
     padding: 40px;
     background-color: #004289;
+    /* height: 100%; */
   }
+
   .form-header-text {
+    text-transform: capitalize;
     font-size: 24px;
     font-weight: 700;
-    color: white;
+    color: #fff;
   }
+
+  .form-header-text > p,
+  .form-header-text {
+    margin-top: 0;
+  }
+
   .form-body-text {
+    font-size: 16px;
+    font-weight: 400;
     color: #ccd1ce;
+    line-height: 25.6px;
+    margin: 20px 0;
   }
+
   .white-edit {
     width: 100%;
-    padding: 10px;
+    padding: 20px;
     border: none;
   }
+
+  .white-edit:focus-visible {
+    outline: none;
+    box-shadow: none;
+  }
+
   .submit-btn {
     width: 100%;
     padding: 15px 0;
@@ -95,23 +138,29 @@
     font-size: 16px;
     color: white;
     font-weight: 700;
-    margin-top: 10px;
+    margin-top: 20px;
+    letter-spacing: 1.3px;
+    font-family: 'IBM Plex Sans';
   }
+
   .email-wrapper > label {
     color: white;
   }
+
   .policy {
     display: flex;
     justify-content: space-around;
     padding: 50px 150px;
     border-top: solid 1px #004289;
   }
+
   .links-wrapper > ul {
     display: flex;
     justify-content: space-around;
     list-style: none;
     margin: 0;
   }
+
   .links-wrapper > ul a {
     padding: 0 10px;
     text-decoration: none;
@@ -119,11 +168,151 @@
     color: #333;
     font-weight: 400;
   }
+
   .logo-img {
     display: block;
+    object-fit: cover;
   }
+
   .social-group {
     text-align: left;
+  }
+
+  .col > h2 {
+    margin-top: 0;
+  }
+
+  @media screen and (min-width: 750px) and (max-width: 989px) {
+    .social-group {
+      width: 70%;
+    }
+
+    .footer__list-social > li {
+      width: 50px;
+      margin: 10px;
+    }
+
+    .row {
+      display: block !important;
+      width: 70%;
+      margin: 0 auto;
+    }
+
+    .col {
+      text-align: center;
+    }
+
+    .content-wrapper {
+      text-align: center;
+      display: inline-block;
+    }
+
+    .social-group {
+      display: contents;
+    }
+
+    .col-join_us {
+      width: 80%;
+      display: inline;
+    }
+
+    .contact-container {
+      display: inline-block;
+    }
+
+    .custom-align {
+      justify-content: center;
+    }
+
+    .group {
+      justify-content: space-around;
+    }
+
+    .content {
+      margin: 0;
+    }
+
+    .col-logo {
+      padding-right: 0;
+    }
+
+    .swiper-wrapper {
+      right: -240px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .social-group {
+      width: 70%;
+    }
+
+    .footer__list-social > li {
+      width: 50px;
+      margin: 10px;
+    }
+
+    .row {
+      display: block !important;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .col {
+      text-align: center;
+    }
+
+    .content-wrapper {
+      text-align: center;
+      display: inline-block;
+    }
+
+    .social-group {
+      display: contents;
+    }
+
+    .col-join_us {
+      width: 80%;
+      display: inline;
+    }
+
+    .contact-container {
+      display: inline-block;
+    }
+
+    .custom-align {
+      justify-content: center;
+    }
+
+    .group {
+      justify-content: space-around;
+    }
+
+    .content {
+      margin-left: 1rem;
+      margin-right: 0;
+    }
+
+    .col-logo {
+      padding-right: 0;
+    }
+
+    .swiper-wrapper {
+      right: -240px;
+    }
+
+    .links-wrapper > ul a {
+      font-size: 10px;
+    }
+
+    .policy {
+      display: block;
+      padding: 0;
+      text-align: center;
+    }
+
+    .logo-img {
+      display: inline;
+    }
   }
 {%- endstyle -%}
 
@@ -176,25 +365,27 @@
         <div class="col col-{{ block.type }}">
           <h2 class="col-head">{{ block.settings.heading }}</h2>
           <div class="contact-wrapper">
-            <div class="group">
-              <div class="label">
-                <label>Tel</label>
-                <label>Email</label>
+            <div class="contact-container">
+              <div class="group">
+                <div class="label">
+                  <label>Tel</label>
+                  <label>Email</label>
+                </div>
+                <div class="content">
+                  <p>{{ block.settings.tel }}</p>
+                  <p>{{ block.settings.email }}</p>
+                </div>
               </div>
-              <div class="content">
-                <p>{{ block.settings.tel }}</p>
-                <p>{{ block.settings.email }}</p>
+              <div class="others">
+                <p>{{ block.settings.company_info }}</p>
+                <p>{{ block.settings.name }}</p>
+                <p>{{ block.settings.country }}</p>
               </div>
+              <p>Follow us</p>
             </div>
-            <div class="others">
-              <p>{{ block.settings.company_info }}</p>
-              <p>{{ block.settings.name }}</p>
-              <p>{{ block.settings.country }}</p>
-            </div>
-            <p>Follow us</p>
             <div class="social-group">
               {%- if block.settings.manage_social and has_social_icons -%}
-                {%- render 'social-icons', class: 'footer__list-social' -%}
+                {%- render 'social-icons', class: 'footer__list-social custom-align' -%}
               {%- endif -%}
             </div>
           </div>
@@ -231,7 +422,9 @@
     </ul>
   </div>
   {%- if section.settings.company_logo != blank -%}
-    <img class="logo-img" src="{{ section.settings.company_logo | image_url: medium }}">
+    <div class="logo-wrapper">
+      <img class="logo-img" src="{{ section.settings.company_logo | image_url: medium }}">
+    </div>
   {%- endif -%}
 </div>
 {% schema %}

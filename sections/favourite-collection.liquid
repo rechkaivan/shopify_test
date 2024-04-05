@@ -29,26 +29,32 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
   .swiper {
     /* overflow-y: unset; */
   }
+
   .swiper-wrapper {
-    right: -250px;
+    right: -240px;
   }
+
   .swiper-pagination {
     position: relative;
     bottom: -8px !important;
   }
+
   .custom-title {
     text-align: center;
     font-size: 34px;
     color: #004289;
     font-weight: 700;
   }
+
   .swiper-button-prev {
     display: block !important;
     width: auto;
   }
+
   .swiper-button-prev::after {
     content: "";
   }
@@ -57,12 +63,18 @@
     display: block !important;
     width: auto;
   }
+
   .swiper-button-next::after {
     content: "";
   }
+
   .swiper-slide {
     min-height: 100%;
     height: auto;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: #666666;
   }
 {%- endstyle -%}
 
@@ -164,22 +176,34 @@
         {% render 'icon-next' %}
       </div>
       <script type="text/javascript">
-        var swiper = new Swiper('.mySwiper', {
-          slidesPerView: 4,
-          spaceBetween: 30,
-          loop: true,
-          loopFillGroupWithBlank: true,
+        const width = window.screen.width;
 
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-          },
+        console.log('width==>', width);
 
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-        });
+        if (width < 750) {
+          showSwiper(1, 10);
+        } else {
+          showSwiper(4, 30);
+        }
+
+        function showSwiper(slidesPerView, spaceBetween) {
+          var swiper = new Swiper('.mySwiper', {
+            slidesPerView: slidesPerView,
+            spaceBetween: spaceBetween,
+            loop: true,
+            loopFillGroupWithBlank: true,
+
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+            },
+
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+          });
+        }
       </script>
       {%- if show_mobile_slider or show_desktop_slider -%}
         <div class="slider-buttons no-js-hidden">

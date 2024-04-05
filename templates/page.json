@@ -24,7 +24,7 @@
           "settings": {
             "article_body_title": "<p>this is h2 headline<\/p>",
             "article__body__head_img": "shopify:\/\/shop_images\/Rectangle_2179.png",
-            "article_body_text": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas faucibus mollis interdum. Sed posuere consectetur est at lobortis.",
+            "article_body_text": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas faucibus mollis interdum. Sed posuere consectetur est at lobortis.Curabitur blandit tempus porttitor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus.Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla.",
             "article__body_img_1": "shopify:\/\/shop_images\/Rectangle_2180.png",
             "article__body_img_2": "shopify:\/\/shop_images\/Rectangle_2181.png"
           }
@@ -44,6 +44,7 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/brand.jpg",
         "head_text": "join our Newsletter",
+        "head_color": "#004289",
         "body_text": "Be the first to know about our offers, events &  new arrivals",
         "btn_text": "Sign Up",
         "btn_color": "#004289"

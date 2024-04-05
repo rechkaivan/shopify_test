@@ -3168,6 +3168,8 @@ details-disclosure > details {
 
 .rte > *:last-child {
   margin-bottom: 0;
+  width: 80%;
+  display: inline-block;
 }
 
 .rte table {
@@ -3535,4 +3537,8 @@ details-disclosure > details {
 
 .section-multi-column {
   margin-bottom: 3.5rem;
+}
+
+.section-jumbotron {
+  background-color: #f5f6f4;
 }

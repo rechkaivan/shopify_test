@@ -16,8 +16,8 @@
           "type": "contact",
           "settings": {
             "heading": "Contact",
-            "tel": "<p><\/p>",
-            "email": "<p><\/p>",
+            "tel": "012 3456789",
+            "email": "hello@domain.com",
             "company_info": "Lorem Ipsum Outdoor",
             "name": "Unit 1, Lipsum,",
             "country": "City, Co. County",

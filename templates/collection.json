@@ -1,5 +1,33 @@
 {
   "sections": {
+    "image_banner_ynmamN": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_P7FVKM": {
+          "type": "heading",
+          "settings": {
+            "heading": "Tops & Jackets",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_P7FVKM"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/brand-2.jpg",
+        "image_overlay_opacity": 40,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "banner": {
       "type": "main-collection-banner",
       "disabled": true,
@@ -28,10 +56,111 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "product_jumbotron_ppmqeA": {
+      "type": "product-Jumbotron",
+      "settings": {
+        "head_text": "tops & Jackets",
+        "body_text": "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas faucibus mollis interdum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam id dolor id nibh ultricies vehicula ut id elit."
+      }
+    },
+    "news_letter_9FPD3Q": {
+      "type": "news-letter",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/brand.jpg",
+        "head_text": "join our Newsletter",
+        "head_color": "#004289",
+        "body_text": "Be the first to know about our offers, events &  new arrivals",
+        "btn_text": "Sign Up",
+        "btn_color": "#004289"
+      }
+    },
+    "custom_multi_column_ztVVgF": {
+      "type": "custom-multi-column",
+      "blocks": {
+        "column_h8MVbj": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Outdoor.png",
+            "title": "WE love outdoors",
+            "text": "<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_ArqBFR": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/planet-earth.png",
+            "title": "Sustainable",
+            "text": "<p> Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_YztUt4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/saint-patricks-day.png",
+            "title": "based in IRELAND",
+            "text": "<p> Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_EfHcHM": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/knitting.png",
+            "title": "something",
+            "text": "<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_h8MVbj",
+        "column_ArqBFR",
+        "column_YztUt4",
+        "column_EfHcHM"
+      ],
+      "settings": {
+        "subtitle": "Quisque velit nisi-",
+        "title": "\"Pellentesque in ipsum id orci porta dapibus.\"",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "learn more",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "icon_with_text_bar_Aaj7d3": {
+      "type": "icon-with-text-bar",
+      "settings": {
+        "bg_color": "#004289",
+        "full__page_width": true,
+        "text_1": "28 day returns",
+        "text_2": "free delivery on orders over €40",
+        "text_3": "Irish Family Business Since 1984"
+      }
     }
   },
   "order": [
+    "image_banner_ynmamN",
     "banner",
-    "product-grid"
+    "product-grid",
+    "product_jumbotron_ppmqeA",
+    "news_letter_9FPD3Q",
+    "custom_multi_column_ztVVgF",
+    "icon_with_text_bar_Aaj7d3"
   ]
 }

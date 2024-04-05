@@ -34,13 +34,24 @@
             "button_link_2": "",
             "button_style_secondary_2": false
           }
+        },
+        "sub_banner_fUEayD": {
+          "type": "sub-banner",
+          "settings": {
+            "banner_img": "shopify:\/\/shop_images\/banner-1.jpg",
+            "sub_header": "everything you need",
+            "banner_header_text": "<p>fishing<\/p>",
+            "banner_body_text": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+            "sub_btn_lbl": "shop fishing"
+          }
         }
       },
       "block_order": [
         "text_Ftf3a8",
         "heading",
         "text_mDPfwe",
-        "button"
+        "button",
+        "sub_banner_fUEayD"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/brand-2.jpg",
@@ -133,6 +144,7 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/brand.jpg",
         "head_text": "join our Newsletter",
+        "head_color": "#333333",
         "body_text": "Be the first to know about our offers, events &  new arrivals",
         "btn_text": "Sign Up",
         "btn_color": "#004289"

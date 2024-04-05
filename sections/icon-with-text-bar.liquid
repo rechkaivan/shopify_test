@@ -14,10 +14,28 @@
   .custom-page-width {
     padding: 0;
   }
+
+  .jumbotron-head > p {
+    font-size: 36px;
+    line-height: 46.8px;
+    font-weight: bold;
+  }
+
+  .btn-primary > p {
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: bold;
+  }
+
+  .jumbotron-body {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25.6px;
+  }
 {%- endstyle -%}
 
 <div class="bar {%- if section.settings.full__page_width == false -%} {{ ' page-width' }} {%- endif -%}">
-  <div class="text-wrapper custom-page-width">
+  <div class="text-wrapper page-width">
     <div class="icon-text">
       {% render 'icon-folder' %}
       <h3 class="inner-text">{{ section.settings.text_1 }}</h3>

@@ -160,6 +160,15 @@
   color: rgba(var(--color-foreground), 0.75);
 }
 
+.card__information {
+  position: relative;
+}
+
+.card-information {
+  position: absolute;
+  bottom: 0;
+}
+
 @media screen and (min-width: 750px) {
   .card__information {
     padding-bottom: 1.7rem;
@@ -237,8 +246,13 @@
 
 .card__description {
   font-size: 15.81px;
-  font-weight: bold;
+  font-weight: 700;
   color: #004289;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card--horizontal .card__heading,

@@ -13,3 +13,41 @@
 .icon-text {
   padding: 3.5rem 0;
 }
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .text-wrapper {
+    display: block !important;
+  }
+
+  .bar .icon-text:last-child {
+    border-bottom: none;
+  }
+
+  .icon-text {
+    display: ruby-text;
+    text-align: center;
+    border-bottom: solid 1px #fff;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .text-wrapper {
+    display: block !important;
+  }
+
+  .icon-text {
+    display: flex;
+    text-align: center;
+    border-bottom: solid 1px #fff;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+
+  .bar .icon-text:last-child {
+    border-bottom: none;
+  }
+
+  .inner-text {
+    font-size: 15px;
+  }
+}

@@ -17,6 +17,8 @@
 .pagination__list > li {
   flex: 1 0 4.4rem;
   max-width: 4.4rem;
+  background-color: #F5F6F4;
+  color: #666;
 }
 
 .pagination__list > li:not(:last-child) {
@@ -41,6 +43,11 @@ a.pagination__item:hover::after {
 
 .pagination__item .icon-caret {
   height: 0.6rem;
+}
+
+.pagination__item--current {
+  background-color: #004289;
+  color: #fff;
 }
 
 .pagination__item--current::after {
@@ -80,3 +87,4 @@ a.pagination__item:hover::after {
 .pagination__item-arrow:hover::after {
   display: none;
 }
+

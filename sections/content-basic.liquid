@@ -1,25 +1,3 @@
-{% comment %}
-  {% style %}
-    .article--title {
-      text-transform: uppercase;
-      font-size: 66px;
-      color: #004289;
-      font-weight: bold;
-    }
-
-    .article-subtitle {
-      color: #004289;
-      font-size: 20px;
-      font-weight: bold;
-    }
-    .article-text {
-    }
-  {% endstyle %}
-
-  <article class="page-width">
-
-  </article>
-{% endcomment %}
 {% style %}
   .article--head-title > p {
     margin: 0;
@@ -44,8 +22,12 @@
   .article--body-title {
     text-transform: uppercase;
     color: #004289;
-    font-size: 40px;
+    font-size: 36px;
     font-weight: bold;
+  }
+
+  .article--body-text {
+    text-align: justify;
   }
 
   .article-width {
@@ -54,6 +36,7 @@
 
   .article--head-text {
     line-height: 2.7rem;
+    text-align: justify;
   }
 
   .article--body-head-img {
@@ -113,9 +96,82 @@
   .aside-container {
     padding: 2.5rem 6rem;
   }
+
+  .article {
+    padding-bottom: 16.3rem;
+  }
+
+  .hidden-aside {
+    display: none;
+  }
+  /*
+  @media screen and (min-width: 1400px) {
+    .page-width: {
+      width: var(--page-width);
+    }
+  } */
+
+  @media screen and (max-width: 989px) {
+    .aside-wrapper {
+      display: block;
+      position: absolute;
+      width: 25px;
+      right: 1rem;
+      top: 13rem;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .aside-wrapper::before {
+      content: '';
+      top: 0;
+      left: 0;
+      height: var(--height);
+      width: 100%;
+      display: block;
+      position: fixed;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .hidden-aside {
+      display: none;
+      position: fixed;
+      height: 100%;
+      width: 250px;
+      top: 0;
+      right: 0;
+      z-index: 10;
+      padding: 3rem;
+      background: #fff;
+      transition-duration: 0.3s;
+    }
+
+    .sidebar-bg {
+      width: 100%;
+      height: 100%;
+    }
+
+    aside {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .article--head-title > p {
+      font-size: 35px;
+    }
+
+    .article--head-subtitle > p {
+      font-size: 15px;
+    }
+
+    .article--body-title {
+      font-size: 25px;
+    }
+  }
 {% endstyle %}
 
-<article>
+<article class="article page-width">
   {%- for block in section.blocks -%}
     {%- case block.type -%}
       {%- when 'heading' -%}
@@ -143,6 +199,19 @@
     {%- endcase -%}
   {%- endfor -%}
 </article>
+<div class="aside-wrapper" id="hidden_asidebar">
+  {%- render 'icon-hamburger' -%}
+</div>
+<div class="sidebar-bg"></div>
+<div class="hidden-aside">
+  <ul class="article-menu">
+    {%- for item in section.settings.content_menu.links -%}
+      <li class="menu-item">
+        <a href="{{ item.url }}">{{ item.title }}</a>
+      </li>
+    {%- endfor -%}
+  </ul>
+</div>
 <aside>
   <div class="aside-container">
     <h1 class="aside-title">{{ section.settings.sidebar_title }}</h1>
@@ -155,7 +224,19 @@
     </ul>
   </div>
 </aside>
-
+<script>
+  document.getElementById('hidden_asidebar').addEventListener('click', function (event) {
+    event.preventDefault();
+    const hiddenAsideStyle = document.querySelector('.aside-wrapper').style;
+    if (hiddenAsideStyle.getPropertyValue('--height') != '0%') {
+      hiddenAsideStyle.setProperty('--height', '0%');
+      document.getElementsByClassName('hidden-aside')[0].style.display = 'none';
+    } else {
+      hiddenAsideStyle.setProperty('--height', '100%');
+      document.getElementsByClassName('hidden-aside')[0].style.display = 'block';
+    }
+  });
+</script>
 {% schema %}
 {
   "name": "content-basic",

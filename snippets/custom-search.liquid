@@ -2,6 +2,7 @@
   .field__label {
     color: #004289;
     font-weight: bold;
+    letter-spacing: 0;
   }
 
   .search__input {
@@ -23,6 +24,12 @@
   .field:hover.field:after {
     outline: 0;
     box-shadow: unset;
+  }
+
+  @media screen and (max-width: 749px) {
+    .field__label {
+      font-size: 9px;
+    }
   }
 {%- endstyle -%}
 

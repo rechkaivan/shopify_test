@@ -15,6 +15,53 @@
 {{ 'component-show-more.css' | asset_url | stylesheet_tag }}
 {{ 'component-visual-display.css' | asset_url | stylesheet_tag }}
 
+{% style %}
+  .active-facets__button--light:hover .active-facets__button-inner {
+    box-shadow: unset;
+  }
+
+  .active-facets__button--light .active-facets__button-inner {
+    text-decoration: underline;
+    box-shadow: unset;
+    color: #004289;
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  .span.active-facets__button-inner {
+    color: #004289;
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  .active-facets__button svg {
+    margin-right: 0.5rem !important;
+  }
+
+  .facet-checkbox__text {
+    display: flex;
+    justify-content: space-between;
+    width: 18rem;
+    color: #004289;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .facet-checkbox__text > span {
+    display: block;
+  }
+
+  .icon-checkmark {
+    background-color: #0468db;
+  }
+
+  .facets__summary-label {
+    font-size: 24px;
+    color: #004289;
+    font-weight: bold;
+  }
+{% endstyle %}
+
 {%- liquid
   assign sort_by = results.sort_by | default: results.default_sort_by
   assign total_active_values = 0
@@ -75,9 +122,9 @@
                     <facet-remove>
                       <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
                         <span class="active-facets__button-inner button button--tertiary">
-                          {{ filter.label | escape }}: {{ value.label | escape }}
-                          {% render 'icon-close-small' %}
+                          {% render 'icon-close' %}
                           <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
+                          {{ filter.label | escape }}: {{ value.label | escape }}
                         </span>
                       </a>
                     </facet-remove>
@@ -142,7 +189,11 @@
                     >
                       <div>
                         <span class="facets__summary-label">
-                          {{- filter.label | escape }}
+                          {%- if filter.label == 'Color' -%}
+                            {{- filter.label | escape }}s
+                          {%- else -%}
+                            {{- filter.label | escape }}
+                          {%- endif -%}
                           {%- if filter_type == 'vertical' -%}
                             <span class="facets__selected no-js-hidden{% if filter.active_values.size == 0 %} hidden{% endif %}">
                               ({{ filter.active_values.size }})</span
@@ -230,45 +281,85 @@
                                     %}
                                   </div>
                                 {% else %}
-                                  <svg
-                                    width="1.6rem"
-                                    height="1.6rem"
-                                    viewBox="0 0 16 16"
-                                    aria-hidden="true"
-                                    focusable="false"
-                                  >
-                                    <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
-                                  </svg>
+                                  {%- if value.label == 'Black' or value.label == 'black' -%}
+                                    <svg
+                                      width="25"
+                                      height="24"
+                                      viewBox="0 0 25 24"
+                                      fill="none"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <rect x="0.03125" width="24" height="24" fill="#004289"/>
+                                    </svg>
+                                  {%- elsif value.label == 'Blue' or value.label == 'blue' -%}
+                                    <svg
+                                      width="25"
+                                      height="24"
+                                      viewBox="0 0 25 24"
+                                      fill="none"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <rect x="0.03125" width="24" height="24" fill="#1BA1CB"/>
+                                    </svg>
+                                  {%- elsif value.label == 'Red' or value.label == 'red' -%}
+                                    <svg
+                                      width="25"
+                                      height="24"
+                                      viewBox="0 0 25 24"
+                                      fill="none"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <rect x="0.03125" width="24" height="24" fill="#E36161"/>
+                                    </svg>
+                                  {%- elsif value.label == 'White' or value.label == 'white' -%}
+                                    <svg
+                                      width="25"
+                                      height="24"
+                                      viewBox="0 0 25 24"
+                                      fill="none"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <rect x="0.03125" width="24" height="24" fill="white"/>
+                                      <rect x="0.28125" y="0.25" width="23.5" height="23.5" stroke="black" stroke-opacity="0.4" stroke-width="0.5"/>
+                                    </svg>
+
+                                  {%- else -%}
+                                    <svg
+                                      width="24"
+                                      height="24"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <rect x="0.5" y="0.5" width="23" height="23" stroke="#004289"/>
+                                    </svg>
+                                  {%- endif -%}
 
                                   <svg
-                                    aria-hidden="true"
+                                    width="24"
+                                    height="24"
                                     class="icon icon-checkmark"
-                                    width="1.1rem"
-                                    height="0.7rem"
-                                    viewBox="0 0 11 7"
+                                    viewBox="0 0 24 24"
                                     fill="none"
                                     xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1"
-                                      stroke="currentColor"
-                                      stroke-width="1.75"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round" />
+                                    <rect width="24" height="24" fill="#0468DB"/>
+                                    <path d="M11.3208 17C10.9961 17 10.6832 16.8629 10.4514 16.614L7.35658 13.2914C6.88114 12.781 6.88114 11.9473 7.35658 11.4374C7.83202 10.927 8.60858 10.927 9.08348 11.4374L11.2859 13.8019L15.8763 8.42595C16.3282 7.89073 17.1053 7.8533 17.6032 8.35109C18.1018 8.83623 18.1366 9.67046 17.673 10.2051L12.225 16.5771C12.0049 16.8386 11.6803 17 11.3438 17H11.3207L11.3208 17Z" fill="white"/>
                                   </svg>
                                 {% endif %}
 
                                 <span class="facet-checkbox__text" aria-hidden="true">
-                                  {{- value.label | escape }} ({{ value.count }})</span
-                                >
+                                  <span>{{- value.label | escape }}</span>
+                                  <span class="total-num">{{ value.count -}}</span>
+                                </span>
                                 <span class="visually-hidden">
-                                  {{- value.label | escape }} (
+                                  {{- value.label | escape }}
                                   {%- if value.count == 1 -%}
                                     {{- 'products.facets.product_count_simple.one' | t: count: value.count -}}
                                   {%- else -%}
                                     {{- 'products.facets.product_count_simple.other' | t: count: value.count -}}
                                   {%- endif -%}
-                                  )</span
-                                >
+                                </span>
                               </label>
                             </li>
                           {%- endfor -%}
@@ -396,6 +487,28 @@
                         {%- endif -%}
                       </div>
                       <price-range class="facets__price">
+                        {% comment %}
+                          <svg
+                            width="24"
+                            height="24"
+                            class="icon icon-checkmark"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect width="24" height="24" fill="#0468DB"/>
+                            <path d="M11.3208 17C10.9961 17 10.6832 16.8629 10.4514 16.614L7.35658 13.2914C6.88114 12.781 6.88114 11.9473 7.35658 11.4374C7.83202 10.927 8.60858 10.927 9.08348 11.4374L11.2859 13.8019L15.8763 8.42595C16.3282 7.89073 17.1053 7.8533 17.6032 8.35109C18.1018 8.83623 18.1366 9.67046 17.673 10.2051L12.225 16.5771C12.0049 16.8386 11.6803 17 11.3438 17H11.3207L11.3208 17Z" fill="white"/>
+                          </svg>
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect x="0.5" y="0.5" width="23" height="23" stroke="#004289"/>
+                          </svg>
+                        {% endcomment %}
                         <span class="field-currency">{{ cart.currency.symbol }}</span>
                         <div class="field">
                           <input
@@ -802,8 +915,9 @@
                                   {% endif %}
 
                                   <span class="facet-checkbox__text" aria-hidden="true">
-                                    {{- value.label | escape }} ({{ value.count }})</span
-                                  >
+                                    <span>{{- value.label | escape }}</span>
+                                    <span class="total-num">{{ value.count -}}</span>
+                                  </span>
                                   <span class="visually-hidden">
                                     {{- value.label | escape }} (
                                     {%- if value.count == '1' -%}
